@@ -1,0 +1,63 @@
+.image-slider {
+  position: relative;
+  width: 100%; /* Full width */
+  max-width: 1000px; /* Adjust this based on your design */
+  margin: 60px auto; /* Center the slider */
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+.image {
+  width: 100%; /* Full width of the parent */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+  object-fit: cover; /* Ensures the image fits nicely without being distorted */
+}
+
+.left, .right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background for better visibility */
+  padding: 20px; /* Increase padding for a larger click area */
+  border-radius: 50%;
+  z-index: 1;
+  color: white; /* Adjust color based on your design */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.left {
+  left: 20px; /* Adjust positioning */
+}
+
+.right {
+  right: 20px; /* Adjust positioning */
+}
+
+/* Add hover effect to make it more interactive */
+.left:hover, .right:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+.currentSlide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.currentSlide.active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  position: relative; /* Ensure it remains in place */
+}
+
+/* Adjust the H2 style to align better with design */
+h2 {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 1.3rem;
+  color: #000;
+  text-align: center; /* Center the heading */
+  font-weight: bold;
+  margin-top: 20px; /* Adjust as per design */
+}

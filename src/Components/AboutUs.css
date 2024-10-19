@@ -1,0 +1,80 @@
+.about-us-container {
+    padding: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #006400; /* Dark green */
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.box {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.box:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-10px); /* Slight lift on hover */
+    background-color: #ffffff; /* Lighten background on hover */
+}
+
+.vision-box {
+    background-color: #dff0d8; /* Light green background */
+}
+
+.vision-box:hover {
+    background-color: #c8e6c9; /* Darker green on hover */
+}
+
+.mission-box {
+    background-color: #f0e68c; /* Light yellow background */
+}
+
+.mission-box:hover {
+    background-color: #ffd700; /* Darker yellow on hover */
+}
+
+.objectives-box {
+    background-color: #e0f7fa; /* Light blue background */
+}
+
+.objectives-box:hover {
+    background-color: #b2ebf2; /* Darker blue on hover */
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}

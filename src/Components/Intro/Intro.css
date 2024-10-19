@@ -1,0 +1,51 @@
+.intro-headline {
+  text-align: center; 
+  font-size: 1.3rem; 
+  margin-bottom: 20px;
+  margin-left: 60px;
+  margin-right: 60px; 
+  margin-top: 20px;
+  color: #333; 
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap; /* Allows the layout to wrap on smaller screens */
+  gap: 20px; /* Space between images */
+  padding: 20px; /* Padding around the component */
+  background-color: #f5f5f5; /* Background color */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.intro-item {
+  flex: 1 1 300px; /* Allows the container to grow and shrink, minimum width 300px */
+  max-width: 400px; /* Limit the width of the image container */
+}
+
+.intro-item img, .intro-items img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners to images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Container for image and text */
+.intro-text-container {
+  position: relative; /* Allows positioning of the text over the image */
+  width: 100%;
+}
+
+.intro-items img {
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+.intro-text {
+  position: absolute;
+  top: 50%; /* Center the text vertically */
+  left: 45%; /* Center the text horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the text's own size */
+  color: rgb(255, 255, 255); /* Text color */
+  font-size: 1rem; /* Adjust the font size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow for better readability */
+}

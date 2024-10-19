@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Image Slider Styles */
+.image-slider {
+    padding: 50px 20px; /* Reduce padding for smaller screens */
+    position: relative;
+    width: 100%; /* Full width */
+    max-width: 1000px; /* Adjust this based on your design */
+    margin: 40px auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+.image {
+    width: 100%; /* Full width of the parent */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    object-fit: cover; /* Ensures the image fits nicely without being distorted */
+}
+
+/* Slider Arrow Controls */
+.left, .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for better visibility */
+    padding: 15px; /* Decrease padding for smaller screens */
+    border-radius: 50%;
+    z-index: 1;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.left {
+    left: 10px; /* Adjust positioning */
+}
+
+.right {
+    right: 10px; /* Adjust positioning */
+}
+
+/* Hover Effects for Arrows */
+.left:hover, .right:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Slide Visibility and Animation */
+.currentSlide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.currentSlide.active {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.home-page h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+
+
+/* Image Gallery Styles */
+.image-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+}
+
+.image-container {
+    position: relative;
+    margin: 10px;
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Paragraph Styling */
+.highlighted-text {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Interventions Section Styles */
+.interventions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.interventions h3 {
+    margin-bottom: 20px;
+    font-size: 2rem; /* Responsive font size */
+    color: #4A774B;
+}
+
+/* Interventions List */
+.interventions ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+}
+
+.interventions ul li {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Intervention Icon Styles */
+.intervention-icon {
+    width: 20vw; /* Responsive width */
+    height: 20vw; /* Responsive height */
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.intervention-icon:hover {
+    background-color: #e0e0e0;
+}
+
+.intervention-name {
+    text-align: center;
+}
+
+.interventions ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.interventions ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .image-slider {
+        padding: 40px 10px;
+    }
+    
+    .left, .right {
+        padding: 10px; /* Smaller click area for smaller screens */
+    }
+
+    .intervention-icon {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    h2 {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .intervention-icon {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .image-slider {
+        padding: 70px 5px;
+    }
+    
+    h2 {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+}

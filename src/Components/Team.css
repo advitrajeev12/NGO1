@@ -1,0 +1,88 @@
+/* Styles for Meet the Team section */
+.meet-the-team {
+  text-align: center;
+  padding: 100px;
+}
+
+/* Founder section layout */
+.founder-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.founder-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.founder-info {
+  text-align: left;
+}
+
+/* Flexbox layout for the new section */
+.team-heading-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+/* Team members layout */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  margin: 20px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.team-member-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .team-member-image {
+  transform: scale(1.05);
+}
+
+.team-member h2 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.team-member h3 {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Social links style */
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}

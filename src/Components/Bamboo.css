@@ -1,0 +1,46 @@
+/* Bamboo.css */
+
+.intervention-container {
+    padding: 100px; /* Set padding to 100px */
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #666; /* Subtle text color */
+    line-height: 1.6;
+  }
+  
+  .bamboo-images {
+    display: flex;
+    justify-content: space-around; /* Adjust to center or space as needed */
+    margin-top: 20px; /* Space above the images */
+  }
+  
+  .bamboo-image {
+    width: 45%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: add rounded corners */
+  }
+  /* Add responsive behavior */
+  @media (max-width: 768px) {
+    .bamboo-container {
+      padding: 20px;
+    }
+  
+    .bamboo-container h1 {
+      font-size: 2rem;
+    }
+  
+    .bamboo-container p {
+      font-size: 1rem;
+    }
+  }
+  

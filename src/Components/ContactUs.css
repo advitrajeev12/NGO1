@@ -1,0 +1,97 @@
+.contact-container {
+  max-width: 800px; /* Limit maximum width for better readability */
+  margin: 0 auto; /* Center container */
+  padding: 100px;
+}
+
+.contact-form-section {
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form div {
+  margin-bottom: 15px;
+}
+
+.visiting-hours, .map-container, .faq {
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  cursor: pointer; /* Change cursor on hover */
+  margin: 10px 0;
+}
+
+.faq-answer {
+  margin: 10px 0 20px 20px; /* Indent the answer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 80px;
+  }
+
+  iframe {
+    width: 100%; /* Ensure iframe is responsive */
+  }
+}
+.chatbot {
+  margin-top: 40px;
+}
+
+.chat-window {
+  border: 1px solid #ccc; /* Add border to chat window */
+  border-radius: 5px; /* Round corners */
+  padding: 15px; /* Padding inside chat window */
+  max-height: 300px; /* Limit height */
+  overflow-y: auto; /* Scroll if content exceeds height */
+}
+
+.chat-messages {
+  margin-bottom: 10px; /* Space between messages and input */
+}
+
+.chat-message {
+  margin-bottom: 10px; /* Space between messages */
+}
+
+.user-message {
+  color: blue; /* Color for user messages */
+}
+
+.bot-message {
+  color: green; /* Color for bot messages */
+}
+
+.chat-form {
+  display: flex; /* Flexbox for input and button */
+}
+
+.chat-form input {
+  flex: 1; /* Input takes remaining space */
+  padding: 10px; /* Padding for input */
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 5px; /* Round corners for input */
+}
+
+.chat-form button {
+  margin-left: 10px; /* Space between input and button */
+  padding: 10px 15px; /* Padding for button */
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Round corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chat-window {
+    max-height: 200px; /* Adjust chat window height on small screens */
+  }
+}
