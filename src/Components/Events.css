@@ -105,6 +105,37 @@
   .gallery-item:hover .gallery-image {
     transform: scale(1.05);
   }
+  /* See More Button Styles */
+.see-more-container {
+  text-align: center; /* Center align the button */
+  margin: 30px 0; /* Add margin above and below */
+}
+
+.see-more-button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* White text */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease, transform 0.2s; /* Transition effects */
+}
+
+.see-more-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.see-more-button:active {
+  transform: translateY(1px); /* Press down effect on click */
+}
+
+.see-more-button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add a glow effect on focus */
+}
+
   
   /* Responsive design */
   @media (max-width: 768px) {

@@ -1,98 +1,158 @@
 /* JoinUs.css */
 .join-us-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 100px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background for better readability */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Darker color for headings */
+}
+
+h2 {
+  text-align: center;
+  color: #555; /* Slightly lighter for subtitles */
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666; /* Gray color for paragraph text */
+}
+
+.form-box {
+  background-color: #fff; /* White background for forms */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Light shadow for form box */
+}
+
+h3 {
+  margin-bottom: 15px;
+  color: #333; /* Darker color for subheadings */
+  text-align: center;
+}
+
+.join-us-form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+.join-us-form input,
+.join-us-form select {
+  padding: 10px;
+  margin: 10px 0; /* Space between form elements */
+  border: 1px solid #ddd; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 16px; /* Base font size */
+}
+
+/* Styling for the select element */
+.join-us-form select {
+  appearance: none; /* Remove default styling */
+  background-color: #fff; /* Background color */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" style="fill:%23007bff;"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat; /* Prevent repeating of the background */
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 10px; /* Size of the custom arrow */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* File input styles */
+.join-us-form input[type="file"] {
+  padding: 5px; /* Reduced padding for file input */
+}
+
+/* Button styles */
+.join-us-form button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* White text on buttons */
+  padding: 10px;
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Base font size for button */
+}
+
+.join-us-form button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .join-us-container {
+      padding: 80px; /* Adjust padding on smaller screens */
   }
-  
+
   h1 {
-    text-align: center;
-    color: #333;
+      font-size: 24px; /* Reduce font size for smaller screens */
   }
-  
+
   h2 {
-    text-align: center;
-    color: #555;
-    margin-bottom: 20px;
+      font-size: 20px; /* Reduce font size for smaller screens */
   }
-  
-  p {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #666;
-  }
-  
-  .form-box {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  h3 {
-    margin-bottom: 15px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .join-us-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
+
   .join-us-form input,
-  .join-us-form select {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .join-us-form input[type="file"] {
-    padding: 5px;
-  }
-  
+  .join-us-form select,
   .join-us-form button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+      font-size: 14px; /* Smaller font size for form elements */
   }
-  
-  .join-us-form button:hover {
-    background-color: #0056b3;
+}
+/* Application Type Selection Styles */
+.application-type-selection {
+  text-align: center; /* Center align content */
+  margin: 20px 0; /* Add vertical margin */
+}
+
+.application-type-selection h3 {
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.application-type-selection button {
+  background-color: #007bff; /* Primary button color */
+  color: white; /* White text */
+  padding: 15px 25px; /* More padding for larger buttons */
+  margin: 10px; /* Space between buttons */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Base font size */
+  transition: background-color 0.3s ease, transform 0.2s; /* Transition effects */
+}
+
+.application-type-selection button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.application-type-selection button:active {
+  transform: translateY(1px); /* Press down effect on click */
+}
+
+.application-type-selection button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add a glow effect on focus */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .application-type-selection button {
+    width: 100%; /* Full width on smaller screens */
+    font-size: 14px; /* Smaller font size for buttons */
   }
-  
-  @media (max-width: 600px) {
-    .join-us-container {
-      padding: 80px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    h2 {
-      font-size: 20px;
-    }
-  
-    .join-us-form input,
-    .join-us-form select,
-    .join-us-form button {
-      font-size: 14px;
-    }
-  }
-  .join-us-form label span {
-    color: red; /* Change to your preferred color */
-    margin-left: 5px; /* Adds space between label text and asterisk */
-  }
-    
+}
+
+
+/* Style for required field indication */
+.join-us-form label span {
+  color: red; /* Color for required field asterisk */
+  margin-left: 5px; /* Space between label text and asterisk */
+}

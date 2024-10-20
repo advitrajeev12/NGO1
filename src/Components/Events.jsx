@@ -6,6 +6,12 @@ import galleryImg3 from '../assets/events/g3.png';
 import galleryImg4 from '../assets/events/g4.png';
 import galleryImg5 from '../assets/events/g5.png';
 import galleryImg6 from '../assets/events/g6.png';
+import galleryImg7 from '../assets/events/g7.png';
+import galleryImg8 from '../assets/events/g8.png';
+import galleryImg9 from '../assets/events/g9.png';
+import galleryImg10 from '../assets/events/g10.png';
+import galleryImg11 from '../assets/events/g11.png';
+
 import newsImg1 from '../assets/events/n1.png';
 import newsImg2 from '../assets/events/n2.png';
 import newsImg3 from '../assets/events/n3.png';
@@ -60,6 +66,11 @@ const Events = () => {
     galleryImg4,
     galleryImg5,
     galleryImg6,
+    galleryImg7,
+    galleryImg8,
+    galleryImg9,
+    galleryImg10,
+    galleryImg11,
   ];
 
   return (
@@ -102,6 +113,11 @@ const Events = () => {
               />
             </div>
           ))}
+        </div>
+        <div className="see-more-container">
+          <button className="see-more-button" onClick={() => console.log('See more clicked!')}>
+            See More
+          </button>
         </div>
       </section>
     </div>

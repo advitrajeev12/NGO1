@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Donation.css'; // assuming you have a CSS file for styling
+import './Donation.css'; // Ensure you have this CSS file for styling
 import donation from '../assets/donation.png';
 
 const Donation = () => {
@@ -15,18 +15,12 @@ const Donation = () => {
     confirmation: false, // Confirmation checkbox state
   });
 
-  const [paymentMethod, setPaymentMethod] = useState('creditCard');
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setDonorData({
       ...donorData,
       [name]: type === 'checkbox' ? checked : value,
     });
-  };
-
-  const handlePaymentChange = (e) => {
-    setPaymentMethod(e.target.value);
   };
 
   const loadRazorpayScript = () => {
@@ -108,32 +102,29 @@ const Donation = () => {
 
   return (
     <div className="donation-container">
-      <h1>Support Our Cause</h1>
-      <p>Your donation will help us improve the lives of artisans and communities.</p>
+      <h1 className="donation-title">Support Our Cause</h1>
+      <p className="donation-subtitle">
+        Your donation will help us improve the lives of artisans and communities.
+      </p>
 
-      {/* Container for image and donation paragraph */}
       <div className="donation-info">
-        <div className="donation-banner">
-          <img src={donation} alt="Support Our Cause" className="donation-image" />
-        </div>
+        <img src={donation} alt="Support Our Cause" className="donation-image" />
         <div className="donation-paragraph">
           <h2>Why We Donate</h2>
           <p>
             Donating is a powerful way to make a meaningful difference in the lives of others. Your generosity
-            helps provide essential resources to underserved communities, supporting economic development and 
-            uplifting families. When you donate to causes like artisan livelihood and women empowerment, 
-            you contribute to sustainable crafts and foster independence for those in need. Every contribution 
-            is a step toward a brighter, more equitable future for all.
+            helps provide essential resources to underserved communities, supporting economic development and
+            uplifting families. When you donate to causes like artisan livelihood and women empowerment, you contribute
+            to sustainable crafts and foster independence for those in need. Every contribution is a step toward a brighter, more equitable future for all.
           </p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="donation-form">
-        {/* 1st Section: My Donation */}
         <div className="form-section">
           <h3>1. My Donation</h3>
           <label>
-            Donation Amount (INR) <span style={{ color: 'red' }}>*</span>
+            Donation Amount (INR) <span className="required">*</span>
           </label>
           <input
             type="number"
@@ -142,12 +133,14 @@ const Donation = () => {
             value={donorData.donationAmount}
             onChange={handleChange}
             required
+            className="donation-input"
           />
           <label>Choose a Cause</label>
           <select
             name="cause"
             value={donorData.cause}
             onChange={handleChange}
+            className="donation-select"
           >
             <option value="" disabled>Select a cause</option>
             <option value="Artisan Livelihood">Artisan Livelihood</option>
@@ -160,14 +153,14 @@ const Donation = () => {
             placeholder="Write a message (optional)"
             value={donorData.message}
             onChange={handleChange}
+            className="donation-textarea"
           ></textarea>
         </div>
 
-        {/* 2nd Section: My Contact Information */}
         <div className="form-section">
           <h3>2. My Contact Information</h3>
           <label>
-            Full Name <span style={{ color: 'red' }}>*</span>
+            Full Name <span className="required">*</span>
           </label>
           <input
             type="text"
@@ -176,9 +169,10 @@ const Donation = () => {
             value={donorData.fullName}
             onChange={handleChange}
             required
+            className="donation-input"
           />
           <label>
-            Email <span style={{ color: 'red' }}>*</span>
+            Email <span className="required">*</span>
           </label>
           <input
             type="email"
@@ -187,9 +181,10 @@ const Donation = () => {
             value={donorData.email}
             onChange={handleChange}
             required
+            className="donation-input"
           />
           <label>
-            Phone Number <span style={{ color: 'red' }}>*</span>
+            Phone Number <span className="required">*</span>
           </label>
           <input
             type="text"
@@ -198,15 +193,16 @@ const Donation = () => {
             value={donorData.phone}
             onChange={handleChange}
             required
+            className="donation-input"
           />
 
-          {/* Government Identity Section */}
-          <label>Select Government Identity Type <span style={{ color: 'red' }}>*</span></label>
+          <label>Select Government Identity Type <span className="required">*</span></label>
           <select
             name="govtIdType"
             value={donorData.govtIdType}
             onChange={handleChange}
             required
+            className="donation-select"
           >
             <option value="" disabled>Select an identity type</option>
             <option value="Aadhar">Aadhar</option>
@@ -215,7 +211,7 @@ const Donation = () => {
           </select>
 
           <label>
-            Enter Government Identity Number <span style={{ color: 'red' }}>*</span>
+            Enter Government Identity Number <span className="required">*</span>
           </label>
           <input
             type="text"
@@ -224,74 +220,42 @@ const Donation = () => {
             value={donorData.govtIdNumber}
             onChange={handleChange}
             required
+            className="donation-input"
           />
         </div>
 
-        {/* 3rd Section: Transaction Mode */}
         <div className="form-section">
-          <h3>3. Transaction Mode</h3>
           <label>
             <input
-              type="radio"
-              name="paymentMethod"
-              value="creditCard"
-              checked={paymentMethod === 'creditCard'}
-              onChange={handlePaymentChange}
+              type="checkbox"
+              name="confirmation"
+              checked={donorData.confirmation}
+              onChange={handleChange}
+              required
+              className="confirmation-checkbox"
             />
-            Credit Card
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="debitCard"
-              checked={paymentMethod === 'debitCard'}
-              onChange={handlePaymentChange}
-            />
-            Debit Card
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="netBanking"
-              checked={paymentMethod === 'netBanking'}
-              onChange={handlePaymentChange}
-            />
-            Net Banking
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="upi"
-              checked={paymentMethod === 'upi'}
-              onChange={handlePaymentChange}
-            />
-            UPI
+            I confirm that the information provided above is accurate.
           </label>
         </div>
 
-        {/* Confirmation Checkbox and Submit Button Container */}
-    <div className="confirm-submit-container" style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
-      <label className="confirm-check" style={{ marginRight: '10px' }}>
-        <input
-          type="checkbox"
-          name="confirmation"
-          checked={donorData.confirmation}
-          onChange={handleChange}
-          required
-        />
-        I confirm that the information provided is accurate and that I am an Indian citizen. Please note that Bal Jyoti Foundation bears no responsibility for the accuracy of the information shared here, and I am willing to donate.
-      </label>
-      </div>
-        
-
-        {/* Submit Button */}
-        <button type="submit" className="submit-button">
-          Submit Donation
+        <button type="submit" className="donate-button">
+          Donate Now
         </button>
       </form>
+
+      <div className="offline-donation-section">
+        <h2>Offline Donations</h2>
+        <p>If you prefer to donate offline, you can do so via bank transfer. Please use the following details:</p>
+        <div className="bank-details">
+          <p><strong>Account Name:</strong> Bal Jyoti Foundation</p>
+          <p><strong>Bank Name:</strong> Punjab National Bank</p>
+          <p><strong>Account Number:</strong> 49220002100004394</p>
+          <p><strong>RTGS/NEFT IFSC Code:</strong> PUNB0492200</p>
+          <p><strong>Branch:</strong> Bodhgaya (Gaya) Bihar-824231</p>
+        </div>
+        <p>Please ensure to mention your name and the cause you are supporting in the transfer description.</p>
+        <p>For any queries regarding offline donations, please contact us at: <strong>contact@baljyotifoundation.org</strong></p>
+      </div>
     </div>
   );
 };

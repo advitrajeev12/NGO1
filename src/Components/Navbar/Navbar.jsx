@@ -50,20 +50,8 @@ const Navbar = () => {
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}> {/* Add 'active' class if menuOpen is true */}
         <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
         <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
-        <li className="navbar-item dropdown">
-          <span className="dropdown-toggle">Join Us</span>
-          <ul className="dropdown-menu">
-            <li className="dropdown-item">
-              <Link to="/join-us/intern" onClick={() => setMenuOpen(false)}>As Intern</Link>
-            </li>
-            <li className="dropdown-item">
-              <Link to="/join-us/trainee" onClick={() => setMenuOpen(false)}>As Trainee</Link>
-            </li>
-            <li className="dropdown-item">
-              <Link to="/join-us/volunteer" onClick={() => setMenuOpen(false)}>As Volunteer</Link>
-            </li>
-          </ul>
-        </li>
+        {/* Direct link for Join Us */}
+        <li><Link to="/joinus" onClick={() => setMenuOpen(false)}>Join Us</Link></li>
         <li><Link to="/events" onClick={() => setMenuOpen(false)}>Events</Link></li>
         <li><Link to="/contacts" onClick={() => setMenuOpen(false)}>Contacts</Link></li>
       </ul>

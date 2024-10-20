@@ -26,8 +26,10 @@ const Footer = () => {
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/mission">Mission & Vision</a></li>
-              <li><a href="/faq">FAQ</a></li>
+              {/* <li><a href="/mission">Mission & Vision</a></li> */}
+              {/* <li><a href="/faq">FAQ</a></li> */}
+              <li><a href="/joinus">Join Us</a></li>
+              <li><a href="/contacts">Contact Us</a></li>
             </ul>
           </div>
 
@@ -35,9 +37,9 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Explore</h3>
             <ul>
-              <li><a href="/about-ngo">About Our NGO</a></li>
+              {/* <li><a href="/about-ngo">About Our NGO</a></li> */}
               <li><a href="/team">Meet The Team</a></li>
-              <li><a href="/news">News & Media</a></li>
+              <li><a href="/events">News & Media</a></li>
               <li>
                 <a
                   href="https://www.mystore.in/en/seller/rupak?srsltid=AfmBOooYRM7GBi-wtCxwaqKe_kJwu6AAoYUSxp1YY6W_l4CIIZ9KWTgz"

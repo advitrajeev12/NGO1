@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './ContactUs.css'; // Ensure you have this CSS file for styling
+import { FaWhatsapp } from 'react-icons/fa'; // Import WhatsApp icon from react-icons
 
 const Contacts = () => {
   const form = useRef();
@@ -8,37 +9,33 @@ const Contacts = () => {
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
-    message: '', // Removed user_phone from initial state
+    message: '',
   });
 
-  const [openIndex, setOpenIndex] = useState(null); // Track which FAQ is open
+  const [openIndex, setOpenIndex] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
-  // Chatbot state
   const [chatMessages, setChatMessages] = useState([]);
   const [userQuestion, setUserQuestion] = useState('');
 
-  // Handle form data change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_kj9fjkr', 'template_6z7kfph', form.current, '185_B0IstFy3CbFqp')
       .then((result) => {
         console.log('Email successfully sent:', result.text);
-        setSuccessMessage('Your message has been sent successfully!'); // Set success message
-        setErrorMessage(''); // Clear error message
-        setFormData({ user_name: '', user_email: '', message: '' }); // Clear form after submission
+        setSuccessMessage('Your message has been sent successfully!');
+        setErrorMessage('');
+        setFormData({ user_name: '', user_email: '', message: '' });
       }, (error) => {
         console.log('Email error:', error.text);
-        setErrorMessage('An error occurred while sending your message. Please try again.'); // Set error message
-        setSuccessMessage(''); // Clear success message
+        setErrorMessage('An error occurred while sending your message. Please try again.');
+        setSuccessMessage('');
       });
   };
 
@@ -58,18 +55,15 @@ const Contacts = () => {
     },
   ];
 
-  // Toggle FAQ visibility
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle the FAQ open/close state
+    setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Handle user question submission in chatbot
   const handleChatSubmit = (e) => {
     e.preventDefault();
     const answer = faqs.find(faq => faq.question.toLowerCase().includes(userQuestion.toLowerCase()));
-
     setChatMessages([...chatMessages, { user: userQuestion, bot: answer ? answer.answer : "I'm sorry, I don't have an answer for that." }]);
-    setUserQuestion(''); // Clear input field
+    setUserQuestion('');
   };
 
   return (
@@ -81,11 +75,11 @@ const Contacts = () => {
         <h2>Get in Touch</h2>
         <p>If you have any questions or comments, please fill out the form below, and we will get back to you as soon as possible.</p>
 
-        {successMessage && <div className="success-message">{successMessage}</div>} {/* Display success message */}
-        {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Display error message */}
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
 
         <form ref={form} onSubmit={handleSubmit} className="contact-form">
-          <div>
+          <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
               type="text"
@@ -96,7 +90,7 @@ const Contacts = () => {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -107,7 +101,7 @@ const Contacts = () => {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="message">Message:</label>
             <textarea
               id="message"
@@ -117,11 +111,23 @@ const Contacts = () => {
               required
             />
           </div>
-          <button type="submit">Send Message</button>
+          <button type="submit" className="btn">Send Message</button>
         </form>
+
+        {/* WhatsApp Icon */}
+        <div className="whatsapp-contact">
+          <a
+            href="https://wa.me/+918008315201?text=Hello, I have a question."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-link"
+          >
+            <FaWhatsapp size={40} color="#25D366" />
+          </a>
+          <span>Chat with us on WhatsApp</span>
+        </div>
       </section>
 
-      {/* Visiting Hours */}
       <section className="visiting-hours">
         <h2>Visiting Hours</h2>
         <p>We welcome visitors during the following hours:</p>
@@ -132,39 +138,33 @@ const Contacts = () => {
         </ul>
       </section>
 
-      {/* Map Container */}
       <section className="map-container">
         <h2>Our Location</h2>
         <iframe
           title="Map of Rupak Bodhgaya"
-          width="100%" // Make iframe responsive
+          width="100%"
           height="450"
           src="https://maps.google.com/maps?q=rupak+bodhgaya+gaya+bihar&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          frameBorder="0"
-          scrolling="no"
-          marginHeight="0"
-          marginWidth="0"
+          
         ></iframe>
       </section>
 
-      {/* FAQ Section */}
       <section className="faq">
         <h2>Frequently Asked Questions</h2>
         {faqs.map((faq, index) => (
           <div key={index}>
             <div className="faq-item" onClick={() => toggleFAQ(index)}>
               <h3>{faq.question}</h3>
+              {openIndex === index && (
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
             </div>
-            {openIndex === index && (
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
-              </div>
-            )}
           </div>
         ))}
       </section>
 
-      {/* Chatbot Section */}
       <section className="chatbot">
         <h2>Chat with us</h2>
         <div className="chat-window">
@@ -172,7 +172,7 @@ const Contacts = () => {
             {chatMessages.map((msg, index) => (
               <div key={index} className="chat-message">
                 <div className="user-message"><strong>User:</strong> {msg.user}</div>
-                <div className="bot-message"><strong>BJF:</strong> {msg.bot}</div> {/* Changed bot name to BJF */}
+                <div className="bot-message"><strong>BJF:</strong> {msg.bot}</div>
               </div>
             ))}
           </div>
@@ -184,7 +184,7 @@ const Contacts = () => {
               placeholder="Type your question..."
               required
             />
-            <button type="submit">Send</button>
+            <button type="submit" className="btn">Send</button>
           </form>
         </div>
       </section>
